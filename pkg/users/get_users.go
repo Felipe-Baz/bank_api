@@ -8,7 +8,9 @@ import (
 
 // @Summary Get Users
 // @Description function to list all users in database
+// @Tags users
 // @Produce json
+// @Success 200  {object}  []models.User
 // @Router /user [get]
 func (h handler) GetUsers(c *fiber.Ctx) error {
     var users []models.User

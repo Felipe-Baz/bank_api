@@ -10,6 +10,7 @@ import (
     "github.com/gofiber/fiber/v2"
 
     swagger "github.com/arsmn/fiber-swagger/v2"
+    _ "bank_api/docs"
 )
 
 // @title Bank API

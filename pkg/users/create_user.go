@@ -15,7 +15,9 @@ type CreateUserRequestBody struct {
 
 // @Summary Create User
 // @Description function to create a new user in database
+// @Tags users
 // @Produce json
+// @Success 200  {object} models.User
 // @Router /user [post]
 func (h handler) CreateUser(context *fiber.Ctx) error {
 	var user models.User
