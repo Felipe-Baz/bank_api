@@ -27,7 +27,7 @@
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/models.User"
+                                "$ref": "#/definitions/entity.User"
                             }
                         }
                     }
@@ -46,7 +46,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/models.User"
+                            "$ref": "#/definitions/entity.User"
                         }
                     }
                 }
@@ -54,7 +54,7 @@
         }
     },
     "definitions": {
-        "models.User": {
+        "entity.User": {
             "type": "object",
             "properties": {
                 "birthdate": {

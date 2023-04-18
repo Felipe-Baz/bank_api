@@ -1,26 +1,26 @@
 package users
 
 import (
-	"bank_api/pkg/commons/models"
+	"bank_api/pkg/commons/entity"
 
 	"github.com/gofiber/fiber/v2"
 )
 
 type CreateUserRequestBody struct {
-    Document string    `json:"document"`
-    Email string       `json:"email"`
-    Name  string       `json:"name"`
-    Birthdate string   `json:"birthdate"`
+	Document  string `json:"document"`
+	Email     string `json:"email"`
+	Name      string `json:"name"`
+	Birthdate string `json:"birthdate"`
 }
 
 // @Summary Create User
 // @Description function to create a new user in database
 // @Tags users
 // @Produce json
-// @Success 200  {object} models.User
+// @Success 200  {object} entity.User
 // @Router /user [post]
 func (h handler) CreateUser(context *fiber.Ctx) error {
-	var user models.User
+	var user entity.User
 
 	err_factory := userFactory(context, &user)
 	if err_factory != nil {
@@ -36,7 +36,7 @@ func (h handler) CreateUser(context *fiber.Ctx) error {
 	return context.Status(fiber.StatusCreated).JSON(&user)
 }
 
-func userFactory(context *fiber.Ctx, user *models.User) *fiber.Error {
+func userFactory(context *fiber.Ctx, user *entity.User) *fiber.Error {
 	body := CreateUserRequestBody{}
 
 	// Parse body
@@ -49,7 +49,7 @@ func userFactory(context *fiber.Ctx, user *models.User) *fiber.Error {
 	return nil
 }
 
-func (h handler) userCreateInDB(user *models.User) *fiber.Error {
+func (h handler) userCreateInDB(user *entity.User) *fiber.Error {
 	result := h.DB.Create(&user)
 
 	if result.Error != nil {
@@ -59,7 +59,7 @@ func (h handler) userCreateInDB(user *models.User) *fiber.Error {
 	return nil
 }
 
-func (body CreateUserRequestBody) userConvert(user *models.User) {
+func (body CreateUserRequestBody) userConvert(user *entity.User) {
 	user.Document = body.Document
 	user.Email = body.Email
 	user.Name = body.Name

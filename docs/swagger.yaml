@@ -1,6 +1,6 @@
 basePath: /
 definitions:
-  models.User:
+  entity.User:
     properties:
       birthdate:
         type: string
@@ -31,7 +31,7 @@ paths:
           description: OK
           schema:
             items:
-              $ref: '#/definitions/models.User'
+              $ref: '#/definitions/entity.User'
             type: array
       summary: Get Users
       tags:
@@ -44,7 +44,7 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/models.User'
+            $ref: '#/definitions/entity.User'
       summary: Create User
       tags:
       - users

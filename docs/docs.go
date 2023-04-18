@@ -34,7 +34,7 @@ const docTemplate = `{
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/models.User"
+                                "$ref": "#/definitions/entity.User"
                             }
                         }
                     }
@@ -53,7 +53,7 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/models.User"
+                            "$ref": "#/definitions/entity.User"
                         }
                     }
                 }
@@ -61,7 +61,7 @@ const docTemplate = `{
         }
     },
     "definitions": {
-        "models.User": {
+        "entity.User": {
             "type": "object",
             "properties": {
                 "birthdate": {
