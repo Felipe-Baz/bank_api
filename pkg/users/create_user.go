@@ -13,6 +13,10 @@ type CreateUserRequestBody struct {
     Birthdate string   `json:"birthdate"`
 }
 
+// @Summary Create User
+// @Description function to create a new user in database
+// @Produce json
+// @Router /user [post]
 func (h handler) CreateUser(context *fiber.Ctx) error {
 	var user models.User
 

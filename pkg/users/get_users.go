@@ -6,6 +6,10 @@ import (
     "github.com/gofiber/fiber/v2"
 )
 
+// @Summary Get Users
+// @Description function to list all users in database
+// @Produce json
+// @Router /user [get]
 func (h handler) GetUsers(c *fiber.Ctx) error {
     var users []models.User
 

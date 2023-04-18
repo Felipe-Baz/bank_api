@@ -1,0 +1,33 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is a sample bank api",
+        "title": "Bank API",
+        "contact": {
+            "email": "fbazmitsuishi@gmail.com"
+        },
+        "version": "0.0.1"
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "paths": {
+        "/user": {
+            "get": {
+                "description": "function to list all users in database",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Get Users",
+                "responses": {}
+            },
+            "post": {
+                "description": "function to create a new user in database",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create User",
+                "responses": {}
+            }
+        }
+    }
+}

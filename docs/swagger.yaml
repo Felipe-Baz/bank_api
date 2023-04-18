@@ -1,0 +1,23 @@
+basePath: /
+host: localhost:3000
+info:
+  contact:
+    email: fbazmitsuishi@gmail.com
+  description: This is a sample bank api
+  title: Bank API
+  version: 0.0.1
+paths:
+  /user:
+    get:
+      description: function to list all users in database
+      produces:
+      - application/json
+      responses: {}
+      summary: Get Users
+    post:
+      description: function to create a new user in database
+      produces:
+      - application/json
+      responses: {}
+      summary: Create User
+swagger: "2.0"
