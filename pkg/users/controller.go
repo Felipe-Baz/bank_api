@@ -17,7 +17,7 @@ func RegisterRoutes(app *fiber.App, db *gorm.DB) {
     routes := app.Group("/user")
     routes.Post("/", h.CreateUser)
     routes.Get("/", h.GetUsers)
-    // routes.Get("/:id", h.GetUserById)
-    // routes.Put("/:id", h.UpdateUser)
-    // routes.Delete("/:id", h.DeleteUser)
+    routes.Get("/:id", h.GetUserById)
+    routes.Put("/:id", h.UpdateUser)
+    routes.Delete("/:id", h.DeleteUser)
 }

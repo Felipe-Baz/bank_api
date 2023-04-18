@@ -12,7 +12,7 @@ import (
 // @Produce json
 // @Success 200  {object}  []models.User
 // @Router /user [get]
-func (h handler) GetUsers(c *fiber.Ctx) error {
+func (h handler) GetUsers(context *fiber.Ctx) error {
     var users []models.User
 
     err := h.getUsersInDB(&users)
@@ -20,7 +20,7 @@ func (h handler) GetUsers(c *fiber.Ctx) error {
 		return err
 	}
 
-    return c.Status(fiber.StatusOK).JSON(&users)
+    return context.Status(fiber.StatusOK).JSON(&users)
 }
 
 func (h handler) getUsersInDB(users *[]models.User) *fiber.Error {
